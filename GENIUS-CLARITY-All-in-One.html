@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U.S. Digital Asset Regulatory Framework — GENIUS + CLARITY</title>
+<style>
+  body{margin:0;background:#f3f2ee;padding:0 0 44px;
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#1a1a1a;}
+  /* tabs */
+  .tabbar{position:sticky;top:0;z-index:20;background:#f3f2ee;padding:16px 16px 10px;border-bottom:1px solid #e6e4dd;}
+  .tabwrap{max-width:880px;margin:0 auto;display:flex;gap:8px;}
+  .tab{flex:1;border:1px solid #d8d6cf;background:#fff;border-radius:10px;padding:10px 12px;cursor:pointer;
+    font-size:14px;font-weight:700;color:#5a5a5a;text-align:center;transition:all .15s;font-family:inherit;line-height:1.2;}
+  .tab small{display:block;font-size:10px;font-weight:500;color:#8a8a8a;margin-top:3px;}
+  .tab:hover{border-color:#b8b6af;}
+  .tab.active{color:#fff;border-color:transparent;}
+  .tab.active small{color:rgba(255,255,255,.85);}
+  #tab-framework.active{background:#2b2b2b;}
+  #tab-genius.active{background:#1f7a8c;}
+  #tab-clarity.active{background:#c47f17;}
+  /* panels */
+  .panel{display:none;padding:18px 16px 0;}
+  .panel.active{display:block;}
+  /* ===== framework styles ===== */
+  .fw{max-width:880px;margin:0 auto;}
+  .hd{background:#2b2b2b;border-radius:12px 12px 0 0;padding:20px 24px;}
+  .hd h1{margin:0;color:#fff;font-size:24px;font-weight:700;}
+  .hd p{margin:4px 0 0;color:#cfcfcf;font-size:13px;}
+  .acts{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;}
+  .act{flex:1;min-width:220px;border-radius:9px;padding:11px 14px;color:#fff;}
+  .act.g{background:#1f7a8c;} .act.c{background:#c47f17;}
+  .act b{font-size:14px;display:block;} .act span{font-size:11.5px;opacity:.92;}
+  a.act{text-decoration:none;cursor:pointer;position:relative;transition:filter .15s;}
+  a.act:hover{filter:brightness(1.1);}
+  a.act:hover b{text-decoration:underline;}
+  .act .arr{position:absolute;top:10px;right:13px;font-size:14px;opacity:.85;}
+  .scope{background:#eef4ec;border:1px solid #d8d6cf;border-top:none;padding:11px 24px;font-size:12.5px;color:#3c5a3c;}
+  .scope b{color:#234023;}
+  .body{background:#fff;border:1px solid #d8d6cf;border-top:none;border-radius:0 0 12px 12px;}
+  .card{padding:18px 24px;border-top:1px solid #e6e4dd;}
+  .ch{display:flex;align-items:center;gap:10px;margin-bottom:4px;}
+  .ico{flex:none;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;}
+  .lab{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a;}
+  .big{font-size:17px;font-weight:700;margin:0 0 4px;}
+  ul{list-style:none;margin:8px 0 0;padding:0;}
+  li{display:flex;gap:9px;align-items:flex-start;margin:8px 0;font-size:13.5px;line-height:1.38;}
+  li .mk{flex:none;width:18px;height:18px;margin-top:1px;}
+  li b{font-weight:600;} li .t{color:#555;}
+  .who{font-weight:700;color:#1a1a1a;}
+  .chip{font-size:9px;font-weight:700;letter-spacing:.03em;padding:2px 6px;border-radius:5px;text-transform:uppercase;white-space:nowrap;margin-right:2px;}
+  .chip.g{background:#def0f3;color:#1f7a8c;} .chip.c{background:#fbedcf;color:#9a630f;}
+  .grp{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin:10px 0 2px;}
+  .grp.g{color:#1f7a8c;} .grp.c{color:#9a630f;}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  @media(max-width:680px){.two{grid-template-columns:1fr;gap:6px;}.acts{flex-direction:column;}}
+  .i-blue{background:#d9e6f7;} .i-green{background:#d8efe2;} .i-amber{background:#fbedcf;} .i-teal{background:#e3f0f3;} .i-grey{background:#ececea;}
+  .strike{color:#9a9a9a;}
+  .concl{margin-top:12px;background:#d8efe2;border-left:3px solid #176844;border-radius:0 8px 8px 0;
+    padding:11px 13px;font-size:12.5px;color:#155e3f;line-height:1.45;}
+  .concl b{color:#0f4a32;}
+  .foot{padding:14px 24px;font-size:11.5px;color:#777;border-top:1px solid #e6e4dd;}
+  /* ===== at-a-glance styles ===== */
+  .ga{max-width:760px;margin:0 auto;}
+  .ga .bar{background:#1f7a8c;border-radius:12px 12px 0 0;padding:18px 22px;display:flex;align-items:center;gap:14px;}
+  .ga-c .bar{background:#c47f17;}
+  .ga .bar .emb{flex:none;}
+  .ga .bar h3{margin:0;color:#fff;font-size:23px;font-weight:700;}
+  .ga .bar p{margin:3px 0 0;color:#cfe6eb;font-size:13px;}
+  .ga-c .bar p{color:#f6e6cc;}
+  .ga .grid{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#fff;
+    border:1px solid #d8d6cf;border-top:none;border-radius:0 0 12px 12px;overflow:hidden;}
+  @media(max-width:680px){.ga .grid{grid-template-columns:1fr;}}
+  .ga .card{padding:20px 22px;border-right:1px solid #e6e4dd;border-top:1px solid #e6e4dd;}
+  .ga .endcol{border-right:none;}
+  .ga .span2{grid-column:1 / -1;border-right:none;}
+  .ga .span2 ul{column-count:2;column-gap:26px;}
+  @media(max-width:680px){.ga .span2 ul{column-count:1;}}
+  .ga .span2 li{break-inside:avoid;}
+  .ga .ch{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+  .ga .ch .ico{flex:none;width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;}
+  .ga .lab{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#5a5a5a;}
+  .ga .big{font-size:18px;font-weight:700;margin:0;line-height:1.15;}
+  .ga .mini{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#9a630f;margin:12px 0 0;}
+  .ga ul{list-style:none;margin:12px 0 0;padding:0;}
+  .ga li{display:flex;gap:9px;align-items:flex-start;margin:9px 0;font-size:13.5px;line-height:1.35;}
+  .ga li .mk{flex:none;width:18px;height:18px;margin-top:1px;}
+  .ga li b{font-weight:600;}
+  .ga li span{color:#555;}
+  .ga .par{display:inline-flex;align-items:baseline;gap:4px;background:#e3f0f3;color:#1f7a8c;font-weight:800;
+    font-size:15px;padding:3px 10px;border-radius:7px;margin-top:10px;}
+  .ga .strike{color:#9a9a9a;}
+  .ga .keep{color:#176844;font-weight:600;}
+  .ga .who{display:block;font-weight:700;color:#1a1a1a;}
+  .ga .flag{margin-top:11px;background:#fbedcf;border-left:3px solid #c47f17;border-radius:0 7px 7px 0;
+    padding:8px 11px;font-size:12px;color:#7d5210;line-height:1.4;}
+  .ga .flag b{color:#5e3d0a;}
+  .ga .concl{margin-top:11px;background:#d8efe2;border-left:3px solid #176844;border-radius:0 7px 7px 0;
+    padding:10px 12px;font-size:12.5px;color:#155e3f;line-height:1.45;}
+  .ga .concl b{color:#0f4a32;}
+</style>
+</head>
+<body>
+
+<div class="tabbar">
+  <div class="tabwrap">
+    <button class="tab active" id="tab-framework" onclick="showTab('framework')">Full Framework<small>both acts, one summary</small></button>
+    <button class="tab" id="tab-genius" onclick="showTab('genius')">GENIUS Act<small>law · stablecoins</small></button>
+    <button class="tab" id="tab-clarity" onclick="showTab('clarity')">CLARITY Act<small>bill · market structure</small></button>
+  </div>
+</div>
+
+<!-- ================= PANEL: FRAMEWORK ================= -->
+<div class="panel active" id="panel-framework">
+<div class="fw">
+
+<div class="hd">
+  <h1>U.S. Digital Asset Regulatory Framework</h1>
+  <p>How the two laws fit together — one governs the dollar coin, the other governs the market around every other token. Not legal advice.</p>
+  <div class="acts">
+    <a class="act g" href="#" onclick="showTab('genius');return false;"><span class="arr">↗</span><b>GENIUS Act</b><span>Law in force (July 2025) · governs payment stablecoins</span></a>
+    <a class="act c" href="#" onclick="showTab('clarity');return false;"><span class="arr">↗</span><b>CLARITY Act</b><span>Pending bill (Senate, ~2026) · governs crypto market structure</span></a>
+  </div>
+</div>
+<div class="scope"><b>Both follow the customer:</b> they apply to U.S.-based companies — and to any entity worldwide that serves U.S. customers. The rule follows the customer, not the company's address.</div>
+
+<div class="body">
+
+  <div class="card">
+    <div class="ch"><span class="ico i-green"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#176844" stroke-width="2"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/></svg></span><span class="lab">1 · What the framework regulates — and what it doesn't</span></div>
+    <div class="two">
+      <div>
+        <p class="grp" style="color:#176844">✓ Regulated</p>
+        <ul>
+          <li><svg class="mk" viewBox="0 0 20 20" fill="#1f7a8c"><circle cx="10" cy="10" r="3"/></svg><span><span class="chip g">GENIUS</span> <b>Payment stablecoins</b> <span class="t">— 1:1, redeemable for $1 (e.g. USDC, USDT).</span></span></li>
+          <li><svg class="mk" viewBox="0 0 20 20" fill="#c47f17"><circle cx="10" cy="10" r="3"/></svg><span><span class="chip c">CLARITY</span> <b>Crypto tokens</b> <span class="t">— the assets themselves (e.g. ETH, BNB).</span></span></li>
+          <li><svg class="mk" viewBox="0 0 20 20" fill="#c47f17"><circle cx="10" cy="10" r="3"/></svg><span><span class="chip c">CLARITY</span> <b>Trading venues</b> <span class="t">— exchanges, brokers, dealers, custodians (e.g. Coinbase, Binance).</span></span></li>
+          <li><svg class="mk" viewBox="0 0 20 20" fill="#c47f17"><circle cx="10" cy="10" r="3"/></svg><span><span class="chip c">CLARITY</span> <b>Token fundraising</b> <span class="t">— selling tokens to the public (e.g. an ICO / token sale).</span></span></li>
+        </ul>
+      </div>
+      <div>
+        <p class="grp" style="color:#a05a5a">✗ Not regulated (out of scope)</p>
+        <ul>
+          <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#a05a5a" stroke-width="2"><circle cx="10" cy="10" r="8"/><path d="M5 5l10 10"/></svg><span><b>Non-custodial DeFi &amp; self-custody</b> <span class="t">— deliberately exempt / protected (e.g. Uniswap, Aave, MetaMask, Ledger).</span></span></li>
+          <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#a05a5a" stroke-width="2"><circle cx="10" cy="10" r="8"/><path d="M5 5l10 10"/></svg><span><b>Algorithmic / decentralized stablecoins</b> <span class="t">— left unaddressed (e.g. DAI, LUSD; formerly UST).</span></span></li>
+          <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#a05a5a" stroke-width="2"><circle cx="10" cy="10" r="8"/><path d="M5 5l10 10"/></svg><span><b>Non-USD / no-yield / multi-currency stablecoins</b> <span class="t">— out of scope (e.g. a euro or basket stablecoin like EURC, EURe).</span></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><span class="ico i-amber"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8a5a09" stroke-width="2"><circle cx="8" cy="8" r="3.5"/><path d="M10.5 10.5L19 19M16 16l2-2M13.5 18.5l2-2"/></svg></span><span class="lab">2 · Operational security (OpSec)</span></div>
+    <p class="big">Beyond the code — keys, treasury &amp; operational risk</p>
+    <ul>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="#1f7a8c"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">Supervised key custody</span> <span class="t">— anyone safekeeping private keys must be a federally/state-supervised qualified custodian (GENIUS + CLARITY).</span></span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="#1f7a8c"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">Operational-risk capital charge</span> <span class="t">— regulators can require capital specifically to cover "operational risk" — i.e. key &amp; treasury failures.</span></span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="#1f7a8c"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">Mandated IT &amp; operational standards</span> <span class="t">— set per issuer risk (with NIST); weak signer hygiene or M-of-N design would breach them.</span></span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="#1f7a8c"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">People are in scope</span> <span class="t">— directors, officers &amp; employees ("institution-affiliated parties") covered for credential/access failures; BSA monitoring + block/freeze.</span></span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="#1f7a8c"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">Compromise &amp; insolvency response</span> <span class="t">— freeze/seize/burn on lawful order; reserves get holder priority and are excluded from the bankruptcy estate after a hack.</span></span></li>
+    </ul>
+    <div class="concl"><b>Sales and Marketing:</b> the law now treats how a company protects its keys, treasury, domains and staff as a regulated duty — not just good practice. If keys are stolen or an insider slips and funds are lost, that's an "operational-risk" failure regulators can penalize, and someone is legally on the hook. Our Four Domains — Multisig Ops, Treasury Ops, DNS &amp; Registrar, and Identity &amp; Accounts — are exactly the controls the law now expects.<br><b>Ask:</b> "Are the treasury controls you've documented (limits, signers, time-delays) the ones that actually execute on-chain today?"</div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><span class="ico i-teal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1f7a8c" stroke-width="2"><circle cx="10" cy="10" r="6"/><path d="M14.5 14.5L20 20"/><path d="M7.5 10l2 2 3.5-3.5"/></svg></span><span class="lab">3 · Smart-contract audit — the practical prerequisite</span></div>
+    <p class="big">Never named in the law — yet functionally mandatory</p>
+    <ul>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="#1f7a8c"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">1 · Public &amp; verifiable code</span> <span class="t">— to be a digital commodity the code must be public, so every flaw is exposed.</span></span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="#1f7a8c"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">2 · Custodian operational risk</span> <span class="t">— the code is the risk; custodians demand an audit to avoid capital charges &amp; liability.</span></span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="#1f7a8c"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">3 · The listing filter</span> <span class="t">— exchanges must prove functions (e.g. freeze/burn) work; an audit is the standard proof.</span></span></li>
+    </ul>
+    <div class="concl"><b>Sales and Marketing:</b> to be listed on a regulated U.S. exchange (or held by a custodian), a token's code must be public. Public code means any flaw is visible — and the custodian is legally on the hook if it gets exploited. So no regulated exchange or custodian will touch a token whose code hasn't been independently checked. <b>That makes the audit the "gate pass"</b> a project needs to reach U.S. exchanges and institutional money.<br><b>Ask:</b> "If a U.S. exchange asked you to prove your code is safe before listing it, what would you show them?"</div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><span class="ico i-amber"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8a5a09" stroke-width="2"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2"/><path d="M3 18c0-3 2.7-5 6-5s6 2 6 5M15 18c0-2 1-3.2 3-3.2"/></svg></span><span class="lab">4 · The actors</span></div>
+    <div class="two">
+      <div>
+        <p class="grp g">GENIUS — stablecoin world</p>
+        <ul>
+          <li><svg class="mk" viewBox="0 0 20 20" fill="#1f7a8c"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">Stablecoin issuers</span> <span class="t">— banks/subsidiaries, OCC nonbanks, state-qualified (e.g. Circle).</span></span></li>
+          <li><svg class="mk" viewBox="0 0 20 20" fill="#1f7a8c"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">Reserve custodians</span> <span class="t">— hold the reserves, segregated (e.g. BNY Mellon, BlackRock reserve fund).</span></span></li>
+        </ul>
+      </div>
+      <div>
+        <p class="grp c">CLARITY — market world</p>
+        <ul>
+          <li><svg class="mk" viewBox="0 0 20 20" fill="#c47f17"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">Non-stablecoin token issuers</span> <span class="t">— create &amp; offer any non-stablecoin token (e.g. Uniswap/UNI, Chainlink/LINK, a new L1 foundation).</span></span></li>
+          <li><svg class="mk" viewBox="0 0 20 20" fill="#c47f17"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">Exchanges, brokers &amp; dealers</span> <span class="t">— run the market (e.g. Binance).</span></span></li>
+          <li><svg class="mk" viewBox="0 0 20 20" fill="#c47f17"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">Customer's asset custodians</span> <span class="t">— qualified custodians holding customer crypto (e.g. Coinbase Custody, BitGo, Anchorage).</span></span></li>
+          <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#176844" stroke-width="2.2"><path d="M4 10l4 4 8-9"/></svg><span><span class="who" style="color:#176844">Non-custodial DeFi &amp; self-custody</span> <span class="t">— exempt; users hold their own keys (e.g. Uniswap protocol, Aave, MetaMask).</span></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><span class="ico i-grey"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8a3b3b" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M6 6l12 12"/></svg></span><span class="lab">5 · Out of scope</span></div>
+    <p class="big">What neither act cleanly covers — and where it goes</p>
+    <ul>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#a05a5a" stroke-width="2"><circle cx="10" cy="10" r="8"/><path d="M5 5l10 10"/></svg><span><b>Algorithmic stablecoins</b> <span class="t">→ gap: Treasury study only (SEC if sold as an investment).</span></span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#a05a5a" stroke-width="2"><circle cx="10" cy="10" r="8"/><path d="M5 5l10 10"/></svg><span><b>Real-world assets (RWAs)</b> <span class="t">→ SEC if a security (treasuries, funds); CFTC if a commodity (gold).</span></span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#a05a5a" stroke-width="2"><circle cx="10" cy="10" r="8"/><path d="M5 5l10 10"/></svg><span><b>Multi-currency / non-USD stablecoins</b> <span class="t">→ SEC if it pays yield; out of scope if it doesn't.</span></span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#a05a5a" stroke-width="2"><circle cx="10" cy="10" r="8"/><path d="M5 5l10 10"/></svg><span><b>Traditional securities &amp; tokenized RWAs</b> <span class="t">→ stay under the SEC.</span></span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#176844" stroke-width="2.2"><path d="M4 10l4 4 8-9"/></svg><span><b>Non-custodial DeFi &amp; self-custody</b> <span class="t">→ deliberately exempt / protected (CLARITY).</span></span></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="ch"><span class="ico i-blue"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1d4e89" stroke-width="2"><path d="M4 21h16M5 21V10M10 21V10M14 21V10M19 21V10M3 10l9-6 9 6"/></svg></span><span class="lab">6 · The regulators</span></div>
+    <div class="two">
+      <div>
+        <p class="grp g">GENIUS</p>
+        <ul>
+          <li><svg class="mk" viewBox="0 0 20 20" fill="#1f7a8c"><circle cx="10" cy="10" r="3"/></svg><span><b>OCC · Federal Reserve · FDIC · NCUA</b> <span class="t">— the issuer's prudential supervisor (pick one by charter).</span></span></li>
+          <li><svg class="mk" viewBox="0 0 20 20" fill="#1f7a8c"><circle cx="10" cy="10" r="3"/></svg><span><b>State regulators</b> <span class="t">— smaller issuers (≤ $10B) that opt in.</span></span></li>
+          <li><svg class="mk" viewBox="0 0 20 20" fill="#1f7a8c"><circle cx="10" cy="10" r="3"/></svg><span><b>Treasury / FinCEN &amp; SCRC</b> <span class="t">— AML &amp; sanctions; certifies state/foreign regimes.</span></span></li>
+        </ul>
+      </div>
+      <div>
+        <p class="grp c">CLARITY</p>
+        <ul>
+          <li><svg class="mk" viewBox="0 0 20 20" fill="#c47f17"><circle cx="10" cy="10" r="3"/></svg><span><b>CFTC</b> <span class="t">— lead; digital-commodity spot markets, exchanges, brokers, dealers.</span></span></li>
+          <li><svg class="mk" viewBox="0 0 20 20" fill="#c47f17"><circle cx="10" cy="10" r="3"/></svg><span><b>SEC</b> <span class="t">— tokens sold as investments until decentralized; keeps anti-fraud.</span></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><span class="ico i-teal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1f7a8c" stroke-width="2"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 11l2 2 4-4"/></svg></span><span class="lab">7 · Cybersecurity &amp; technical standards</span></div>
+    <div class="two">
+      <div>
+        <p class="grp g">GENIUS — prudential IT oversight</p>
+        <ul>
+          <li><svg class="mk" viewBox="0 0 20 20" fill="#1f7a8c"><circle cx="10" cy="10" r="3"/></svg><span class="t">Regulators set <b>IT, cybersecurity, BSA &amp; sanctions</b> standards (with NIST).</span></li>
+          <li><svg class="mk" viewBox="0 0 20 20" fill="#1f7a8c"><circle cx="10" cy="10" r="3"/></svg><span class="t">Must be able to <b>freeze / seize / burn</b> coins on a lawful order.</span></li>
+        </ul>
+      </div>
+      <div>
+        <p class="grp c">CLARITY — transparency &amp; decentralization</p>
+        <ul>
+          <li><svg class="mk" viewBox="0 0 20 20" fill="#c47f17"><circle cx="10" cy="10" r="3"/></svg><span class="t"><b>Public source-code disclosure</b> + transaction-history access.</span></li>
+          <li><svg class="mk" viewBox="0 0 20 20" fill="#c47f17"><circle cx="10" cy="10" r="3"/></svg><span class="t"><b>"Maturity"</b> = decentralized, rules-based consensus, no single controller.</span></li>
+          <li><svg class="mk" viewBox="0 0 20 20" fill="#c47f17"><circle cx="10" cy="10" r="3"/></svg><span class="t"><b>Self-custody &amp; developer safe harbor</b> protected.</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="concl" style="background:#fbedcf;border-left-color:#c47f17;color:#7d5210"><b>Shared gap:</b> neither act requires a <b>smart-contract / security (code) audit</b>. GENIUS leaves the technical detail to rulemaking; CLARITY relies on transparency and decentralization instead.</div>
+  </div>
+
+  <div class="foot">Educational summary of the GENIUS Act (enacted July 2025) and the CLARITY Act / H.R. 3633 (pending in the Senate). Not legal advice — verify specifics against final statutory text and counsel.</div>
+
+</div>
+</div>
+</div>
+
+<!-- ================= PANEL: GENIUS ================= -->
+<div class="panel" id="panel-genius">
+<div class="ga">
+
+<div class="bar">
+  <span class="emb"><svg width="38" height="38" viewBox="0 0 38 38"><circle cx="19" cy="19" r="18" fill="#16606e"/><text x="19" y="26" text-anchor="middle" font-size="20" font-weight="800" fill="#fff" font-family="sans-serif">$</text></svg></span>
+  <div><h3>GENIUS Act — at a glance</h3><p>U.S. law in force (July 2025) · governs payment stablecoins · not legal advice</p></div>
+</div>
+
+<div class="grid">
+
+  <div class="card">
+    <div class="ch">
+      <span class="ico i-blue"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1d4e89" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span>
+      <span class="lab">1 · Geographic coverage</span>
+    </div>
+    <p class="big">Global reach</p>
+    <ul>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="#1d4e89"><circle cx="10" cy="10" r="3"/></svg><span>Applies to <b>U.S.-based companies</b> — and to <b>any entity worldwide that serves U.S. customers</b>. The rule follows the customer, not the company's address.</span></li>
+    </ul>
+  </div>
+
+  <div class="card endcol">
+    <div class="ch">
+      <span class="ico i-green"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#176844" stroke-width="2"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span>
+      <span class="lab">2 · What it regulates</span>
+    </div>
+    <p class="big">Payment stablecoins</p>
+    <span class="par">1 : 1 <span style="font-weight:600;font-size:12px">always redeems for $1</span></span>
+    <ul>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#176844" stroke-width="2"><path d="M10 2l7 3v5c0 4-3 7-7 8-4-1-7-4-7-8V5z"/></svg><span><b>Fully backed 1:1</b> by safe, liquid assets.</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#176844" stroke-width="2"><path d="M10 2v16M4 8l6-6 6 6"/></svg><span><b>Holders paid first</b> if the issuer fails.</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#176844" stroke-width="2"><circle cx="10" cy="10" r="8"/><path d="M6 10h8"/></svg><span><b>A payment tool, not an investment</b> — no interest to holders.</span></li>
+    </ul>
+  </div>
+
+  <div class="card span2">
+    <div class="ch">
+      <span class="ico i-amber"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a5a09" stroke-width="2"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2"/><path d="M3 18c0-3 2.7-5 6-5s6 2 6 5M15 18c0-2 1-3.2 3-3.2"/></svg></span>
+      <span class="lab">3 · The actors</span>
+    </div>
+    <p class="big">Who the law regulates</p>
+    <ul>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#176844" stroke-width="2"><ellipse cx="10" cy="5" rx="6" ry="2.2"/><path d="M4 5v10c0 1.2 2.7 2.2 6 2.2s6-1 6-2.2V5"/></svg><span><span class="who">Permitted stablecoin issuers</span>The licensed legal persons allowed to issue the coin — bank subsidiaries, OCC-supervised nonbanks, state-qualified firms (e.g. Circle / USDC).</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#8a5a09" stroke-width="2"><circle cx="10" cy="10" r="8"/><path d="M2 10h16M10 2c2.5 2.5 2.5 13 0 16M10 2c-2.5 2.5-2.5 13 0 16"/></svg><span><span class="who">Foreign issuers</span>Non-U.S. issuers serving U.S. users — allowed only if they meet a "comparable" standard (e.g. Tether).</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#1f7a8c" stroke-width="2"><rect x="4" y="8" width="12" height="9" rx="1"/><path d="M7 8V6a3 3 0 016 0v2"/></svg><span><span class="who">Reserve custodians</span>Banks or trust firms that hold the reserve assets — must keep them segregated from their own funds.</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#1f7a8c" stroke-width="2"><path d="M3 16h14M5 16V9M10 16V9M15 16V9"/></svg><span><span class="who">Distributors (exchanges &amp; wallets)</span>Platforms that offer the coin to users — may only list GENIUS-compliant stablecoins.</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#1f7a8c" stroke-width="2"><path d="M4 10l4 4 8-9"/></svg><span><span class="who">Auditors</span>Registered accounting firms examine the monthly reserves.</span></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="ch">
+      <span class="ico i-grey"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a3b3b" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M6 6l12 12"/></svg></span>
+      <span class="lab">4 · What it does NOT cover</span>
+    </div>
+    <p class="big">Out of scope — who covers it instead</p>
+    <ul>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#a05a5a" stroke-width="2"><circle cx="10" cy="10" r="8"/><path d="M5 5l10 10"/></svg><span><b>Algorithmic stablecoins</b> → <b>no clean home</b>: Treasury study only (SEC if sold as an investment).</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#a05a5a" stroke-width="2"><circle cx="10" cy="10" r="8"/><path d="M5 5l10 10"/></svg><span><b>Real-world assets (RWAs)</b> → <b>SEC</b> if a security (treasuries, funds); <b>CFTC</b> if a commodity (gold).</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#a05a5a" stroke-width="2"><circle cx="10" cy="10" r="8"/><path d="M5 5l10 10"/></svg><span><b>Multi-currency / non-USD stablecoins</b> → <b>SEC</b> if it pays yield; <b>out of scope</b> if it doesn't.</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#a05a5a" stroke-width="2"><circle cx="10" cy="10" r="8"/><path d="M5 5l10 10"/></svg><span><b>Other crypto tokens</b> (LINK, AAVE, BTC…) → <b>CLARITY</b> (CFTC, or SEC if a security).</span></li>
+    </ul>
+  </div>
+
+  <div class="card endcol">
+    <div class="ch">
+      <span class="ico i-amber"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a5a09" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M12 4v3M12 17v3"/></svg></span>
+      <span class="lab">5 · Issuer must</span>
+    </div>
+    <p class="big">Real money, safely kept</p>
+    <ul>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#176844" stroke-width="2.2"><path d="M4 10l4 4 8-9"/></svg><span><b>Hold real reserves</b> in a "safe vault" — cash &amp; short-term U.S. Treasuries.</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#176844" stroke-width="2.2"><path d="M4 10l4 4 8-9"/></svg><span><b>Be audited — financial only</b> — monthly reserve disclosure checked by accountants.</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#176844" stroke-width="2.2"><path d="M4 10l4 4 8-9"/></svg><span><b>Redeem on demand</b> — clear, timely redemption procedures.</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#176844" stroke-width="2.2"><path d="M4 10l4 4 8-9"/></svg><span><b>Follow AML / KYC</b> rules (Bank Secrecy Act) + freeze/seize on lawful order.</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#176844" stroke-width="2.2"><path d="M4 10l4 4 8-9"/></svg><span>By backing coins with Treasuries, it <b>reinforces the U.S. dollar</b>.</span></li>
+    </ul>
+    <div class="flag"><b>Note:</b> the GENIUS audit is a <b>financial / reserve audit</b> (do the dollars exist?). It is <b>NOT a smart-contract or security audit</b> — the law does not require any review of the issuer's code.</div>
+  </div>
+
+  <div class="card span2">
+    <div class="ch">
+      <span class="ico i-teal"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a8c" stroke-width="2"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 11l2 2 4-4"/></svg></span>
+      <span class="lab">6 · Cybersecurity &amp; security standards</span>
+    </div>
+    <p class="big">Required — but the detail is still being written</p>
+    <ul>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="#1f7a8c"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">IT &amp; cyber standards</span>Regulators (OCC/Fed/FDIC) must set operational, IT, cybersecurity, Bank Secrecy Act (BSA) &amp; sanctions standards, tailored to each issuer's risk.</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="#1f7a8c"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">Lawful-order capability</span>Issuers must be technically able to seize, freeze or burn coins on a court or agency order.</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="#1f7a8c"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">Interoperability standards</span>Regulators may set compatibility &amp; interoperability standards, developed with the National Institute of Standards and Technology (NIST).</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="#1f7a8c"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">Monitoring innovation</span>Treasury to explore APIs, AI &amp; blockchain monitoring; rules for mixing services &amp; DeFi risk.</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="#1f7a8c"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">Smart contracts in scope</span>The law defines ledgers as "cryptographically secured" and names smart contracts — but whether a code audit is required is left to rulemaking.</span></li>
+    </ul>
+    <div class="flag"><b>Key gap:</b> GENIUS sets the <b>requirement</b> for security standards but leaves the technical detail — including whether a <b>smart-contract audit</b> is mandatory — to the ongoing multi-agency rulemaking.</div>
+  </div>
+
+  <div class="card span2">
+    <div class="ch">
+      <span class="ico i-blue"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1d4e89" stroke-width="2"><path d="M4 21h16M5 21V10M10 21V10M14 21V10M19 21V10M3 10l9-6 9 6"/></svg></span>
+      <span class="lab">7 · The regulators</span>
+    </div>
+    <p class="big">Who you register with — pick ONE</p>
+    <ul>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="#1d4e89"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">You're a national bank (or its subsidiary)</span>→ register with the <b>OCC</b>.</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="#1d4e89"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">You're a state member bank / bank holding company</span>→ register with the <b>Federal Reserve</b>.</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="#1d4e89"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">You're a state non-member insured bank</span>→ register with the <b>FDIC</b>.</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="#1d4e89"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">You're a credit union</span>→ register with the <b>NCUA</b>.</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="#1d4e89"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">You're a standalone nonbank company (e.g. a crypto startup)</span>→ apply to the <b>OCC</b> (federal nonbank route).</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="#1d4e89"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">You're a small issuer (≤ $10B)</span>→ your <b>State regulator</b> (if the regime is certified); move to federal once you pass $10B.</span></li>
+    </ul>
+    <div class="flag"><b>Always, on top (every issuer):</b> <b>Treasury / FinCEN</b> — AML, KYC &amp; sanctions. <b>SCRC</b> (Stablecoin Certification Review Committee, Treasury-chaired with the Fed &amp; FDIC) doesn't take your filing — it certifies whether a state or foreign regime above qualifies in the first place.</div>
+  </div>
+
+</div>
+</div>
+</div>
+
+<!-- ================= PANEL: CLARITY ================= -->
+<div class="panel" id="panel-clarity">
+<div class="ga ga-c">
+
+<div class="bar">
+  <span class="emb"><svg width="38" height="38" viewBox="0 0 38 38"><circle cx="19" cy="19" r="18" fill="#9a630f"/><path d="M12 25h14M19 11v14M13 16l6-5 6 5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  <div><h3>CLARITY Act — at a glance</h3><p>Pending U.S. bill (Senate, ~2026) · governs crypto market structure · not legal advice</p></div>
+</div>
+
+<div class="grid">
+
+  <div class="card">
+    <div class="ch">
+      <span class="ico i-blue"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1d4e89" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span>
+      <span class="lab">1 · Geographic coverage</span>
+    </div>
+    <p class="big">Global reach</p>
+    <ul>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="#1d4e89"><circle cx="10" cy="10" r="3"/></svg><span>Applies to <b>U.S.-based companies</b> — and to <b>any entity worldwide that serves U.S. customers</b>. The rule follows the customer, not the company's address.</span></li>
+    </ul>
+  </div>
+
+  <div class="card endcol">
+    <div class="ch">
+      <span class="ico i-amber"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a5a09" stroke-width="2"><path d="M4 21h16M6 21V9M12 21V9M18 21V9M3 9l9-6 9 6"/></svg></span>
+      <span class="lab">2 · What it regulates</span>
+    </div>
+    <p class="big">Crypto market structure</p>
+    <p class="mini">What falls under the law</p>
+    <ul>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#8a5a09" stroke-width="2"><circle cx="10" cy="10" r="8"/><path d="M10 6v8M7 9h6"/></svg><span><b>Crypto tokens</b> — the assets themselves (e.g. LINK, AAVE, UNI).</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#8a5a09" stroke-width="2"><path d="M3 17h14M5 17V8M10 17V8M15 17V8"/></svg><span><b>Trading venues</b> — exchanges, brokers, dealers and custodians.</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#8a5a09" stroke-width="2"><path d="M10 3v14M5 8h7a2.5 2.5 0 010 5H6"/></svg><span><b>Token fundraising</b> — how projects sell tokens to the public.</span></li>
+    </ul>
+  </div>
+
+  <div class="card span2">
+    <div class="ch">
+      <span class="ico i-amber"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a5a09" stroke-width="2"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2"/><path d="M3 18c0-3 2.7-5 6-5s6 2 6 5M15 18c0-2 1-3.2 3-3.2"/></svg></span>
+      <span class="lab">3 · The actors</span>
+    </div>
+    <p class="big">Who the law regulates</p>
+    <ul>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#1f7a8c" stroke-width="2"><circle cx="10" cy="6" r="3"/><path d="M4 17c0-3.3 2.7-5 6-5s6 1.7 6 5"/></svg><span><span class="who">Token issuers</span>The natural or legal persons who create and publicly offer a token (any token except a payment stablecoin).</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#1f7a8c" stroke-width="2"><path d="M3 17h14M5 17V8M10 17V8M15 17V8M3 8l7-5 7 5"/></svg><span><span class="who">Exchanges, brokers &amp; dealers</span>The venues and firms that run the marketplace and execute trades (e.g. Binance).</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#1f7a8c" stroke-width="2"><rect x="4" y="8" width="12" height="9" rx="1"/><path d="M7 8V6a3 3 0 016 0v2"/></svg><span><span class="who">Custodians</span>Firms that hold customers' crypto and control their keys — a digital vault.</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#176844" stroke-width="2.2"><path d="M4 10l4 4 8-9"/></svg><span><span class="who" style="color:#176844">Non-custodial / DeFi &amp; self-custody</span>Software and users that never hold anyone else's keys — users control their own assets.</span></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="ch">
+      <span class="ico i-grey"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a3b3b" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M6 6l12 12"/></svg></span>
+      <span class="lab">4 · What it does NOT cover</span>
+    </div>
+    <p class="big">Out of scope / exempt</p>
+    <ul>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#a05a5a" stroke-width="2"><circle cx="10" cy="10" r="8"/><path d="M5 5l10 10"/></svg><span class="strike"><b>Payment stablecoins</b> → that's GENIUS's job.</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#a05a5a" stroke-width="2"><circle cx="10" cy="10" r="8"/><path d="M5 5l10 10"/></svg><span class="strike"><b>Traditional securities &amp; tokenized RWAs</b> → stay under the SEC.</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#176844" stroke-width="2.2"><path d="M4 10l4 4 8-9"/></svg><span><span class="keep">Exempt:</span> <b>non-custodial DeFi software</b> — developers, front-ends, validators, wallets.</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#176844" stroke-width="2.2"><path d="M4 10l4 4 8-9"/></svg><span><span class="keep">Protected:</span> an individual's right to <b>self-custody</b>.</span></li>
+    </ul>
+  </div>
+
+  <div class="card endcol">
+    <div class="ch">
+      <span class="ico i-teal"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a8c" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></span>
+      <span class="lab">5 · Each actor must</span>
+    </div>
+    <p class="big">What each actor must do</p>
+    <ul>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#176844" stroke-width="2.2"><path d="M4 10l4 4 8-9"/></svg><span><span class="who">Token issuers</span>Disclose project &amp; risk info, raise under a capped limit, and certify the blockchain is "mature."</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#176844" stroke-width="2.2"><path d="M4 10l4 4 8-9"/></svg><span><span class="who">Exchanges, brokers &amp; dealers</span>Register (CFTC for commodities / SEC for securities), follow conduct rules, and not trade against their own customers.</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#176844" stroke-width="2.2"><path d="M4 10l4 4 8-9"/></svg><span><span class="who">Custodians</span>Keep customer assets segregated — and never use them (e.g. staking) without the customer's written consent.</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="none" stroke="#176844" stroke-width="2.2"><path d="M4 10l4 4 8-9"/></svg><span><span class="who" style="color:#176844">Non-custodial / DeFi</span>Nothing to register — stays exempt as long as it's genuinely non-custodial.</span></li>
+    </ul>
+    <div class="flag"><b>Note:</b> the DeFi exemption depends on being genuinely <b>non-custodial</b> — and the law mandates <b>no code review</b> to qualify.</div>
+  </div>
+
+  <div class="card span2">
+    <div class="ch">
+      <span class="ico i-teal"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a8c" stroke-width="2"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 11l2 2 4-4"/></svg></span>
+      <span class="lab">6 · Cybersecurity &amp; technical standards</span>
+    </div>
+    <p class="big">Transparency &amp; decentralization — not prudential IT rules</p>
+    <ul>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="#1f7a8c"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">Source-code disclosure</span>A blockchain is defined as publicly available source code; issuers must disclose source code &amp; give transaction-history access to qualify for the exemption.</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="#1f7a8c"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">"Maturity" is a technical test</span>The benchmark is governance &amp; security: a transparent, rules-based consensus with no single person or group in control — this is what flips a token from SEC to CFTC.</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="#1f7a8c"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">Self-custody &amp; developer safe harbor</span>Protects wallet hardware/software; developers aren't money transmitters just for publishing code or running infrastructure.</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="#1f7a8c"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">Stablecoins → GENIUS rules</span>CLARITY adopts GENIUS's stablecoin definitions, so stablecoin IT &amp; cybersecurity standards (developed with NIST) live in GENIUS, not here.</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="#1f7a8c"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">Enforcement capability</span>Shared with GENIUS: the ability to freeze, seize or burn assets on a lawful order.</span></li>
+    </ul>
+    <div class="flag"><b>Key point:</b> CLARITY mandates <b>no smart-contract audit</b>. But because the code must be <b>public &amp; verifiable</b> to be listed, and custodians must manage <b>operational risk</b>, an audit becomes a <b>practical prerequisite</b> to hold or trade the asset — even though the statute never requires one.</div>
+  </div>
+
+  <div class="card span2">
+    <div class="ch">
+      <span class="ico i-blue"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1d4e89" stroke-width="2"><path d="M4 21h16M5 21V10M10 21V10M14 21V10M19 21V10M3 10l9-6 9 6"/></svg></span>
+      <span class="lab">7 · The regulators</span>
+    </div>
+    <p class="big">Who enforces it</p>
+    <ul>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="#1d4e89"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">CFTC</span>Lead — digital-commodity spot markets, plus exchanges, brokers &amp; dealers.</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="#1d4e89"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">SEC</span>Tokens still sold as investments (until decentralized); keeps anti-fraud authority.</span></li>
+    </ul>
+  </div>
+
+  <div class="card span2">
+    <div class="ch">
+      <span class="ico i-teal"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f7a8c" stroke-width="2"><circle cx="10" cy="10" r="6"/><path d="M14.5 14.5L20 20"/><path d="M7.5 10l2 2 3.5-3.5"/></svg></span>
+      <span class="lab">8 · Smart-contract audit — the practical prerequisite</span>
+    </div>
+    <p class="big">Never named in the law — yet functionally mandatory</p>
+    <ul>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="#1f7a8c"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">1 · Public &amp; verifiable code (CLARITY)</span>To be a digital commodity the source code must be public — so every flaw is exposed, and no exchange can claim ignorance of it.</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="#1f7a8c"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">2 · Custodian operational risk (GENIUS + CLARITY)</span>The code itself is the "operational risk." To avoid capital charges and liability for a hack, custodians demand a third-party audit as proof it's managed.</span></li>
+      <li><svg class="mk" viewBox="0 0 20 20" fill="#1f7a8c"><circle cx="10" cy="10" r="3"/></svg><span><span class="who">3 · The listing filter (exchanges)</span>Venues are penalized for listing non-compliant assets and must prove functions like freeze/burn actually work — an audit is the standard tool to show it.</span></li>
+    </ul>
+    <div class="concl"><b>Sales and Marketing:</b> an unaudited token can't clear the path to a regulated U.S. exchange or custodian — and that makes the audit the <b>"gate pass"</b> that moves a project from a private token to a U.S.-listable, institution-ready asset.<br><b>Ask:</b> "If a U.S. exchange asked you to prove your code is safe before listing it, what would you show them?"</div>
+  </div>
+
+</div>
+</div>
+</div>
+
+<script>
+  function showTab(id){
+    var panels = document.querySelectorAll('.panel');
+    for (var i=0;i<panels.length;i++){ panels[i].classList.remove('active'); }
+    document.getElementById('panel-'+id).classList.add('active');
+    var tabs = document.querySelectorAll('.tab');
+    for (var j=0;j<tabs.length;j++){ tabs[j].classList.remove('active'); }
+    document.getElementById('tab-'+id).classList.add('active');
+    window.scrollTo(0,0);
+  }
+</script>
+</body>
+</html>
